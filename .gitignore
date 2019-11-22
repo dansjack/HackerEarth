@@ -112,3 +112,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+*.xml
+*.iml
+.DS_Store
+.idea/
+hackerEarth-j/.idea/
+hackerEarth-py/.idea/
