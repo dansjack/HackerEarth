@@ -42,3 +42,16 @@ def find_product(n, int_list):
     for i in int_list:
         answer = (answer * int(i)) % 1000000007
     return answer
+
+
+def sum_ab(a, b):
+    return int(a) + int(b)
+
+
+def sum_ab_loop():
+    while True:
+        try:
+            a, b = input().split()
+            sum_ab(int(a), int(b))
+        except EOFError:
+            break
