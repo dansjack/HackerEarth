@@ -20,19 +20,11 @@ def vowel_recognition(s):
     s = s.lower()
     vowels = 0
     size = len(s)
-    i = 0
-    s2 = ''
-    while True:
-        if size < 1:  # Reached front of list
-            size = len(s)
-            if i > size:  # Checked all substrings, exit loop
-                break
-            i += 1
-        s2 += s[i:size]
-        size -= 1
-
-    for i in 'aeiou':
-        vowels += s2.count(i)
+    for i in range(size):
+        if s[i] in 'aeiou':
+            #  if el is a vowel, count all the sub strings including el
+            #  to the left (i + 1) and right (size - 1) and multiply
+            vowels += ((i + 1) * (size - i))
 
     print(vowels)
     return vowels
