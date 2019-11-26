@@ -17,8 +17,6 @@ def vowel_recognition(s):
     possible substring in string s
     :param s: string to analyze
     """
-
-    #  try count()
     s = s.lower()
     vowels = 0
     size = len(s)
@@ -33,9 +31,8 @@ def vowel_recognition(s):
         s2 += s[i:size]
         size -= 1
 
-    for j in s2:
-        if j in 'aeiou':
-            vowels += 1
+    for i in 'aeiou':
+        vowels += s2.count(i)
 
     print(vowels)
     return vowels
