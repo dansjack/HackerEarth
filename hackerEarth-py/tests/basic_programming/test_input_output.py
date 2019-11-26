@@ -1,6 +1,6 @@
 import unittest
 
-from basic_programming.input_output import find_product, sum_ab
+from basic_programming.input_output import find_product
 
 
 class TestInputOutput(unittest.TestCase):
@@ -32,18 +32,6 @@ class TestInputOutput(unittest.TestCase):
         with self.assertRaises(ValueError):
             find_product(list_size, n)
 
-
-class TestComplexityAnalysis(unittest.TestCase):
-    def test_ab(self):
-        """
-        Tests that it can sum two given numbers
-        """
-        answer_list = [3, 7, 24]
-        input_list = [[1, 2], [2, 5], [10, 14]]
-        for i in range(len(answer_list)):
-            print('i: {}'.format(i))
-            self.assertEqual(answer_list[i],
-                             sum_ab(input_list[i][0], input_list[i][1]))
 
 
 if __name__ == '__main__':
