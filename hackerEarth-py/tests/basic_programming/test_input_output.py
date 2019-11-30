@@ -3,7 +3,7 @@ from io import StringIO
 from unittest.mock import patch
 
 from basic_programming.input_output import find_product, zoos, count_divisors, \
-    factorial
+    factorial, toggle_string
 
 
 class TestInputOutput(unittest.TestCase):
@@ -51,6 +51,10 @@ class TestInputOutput(unittest.TestCase):
         self.assertEqual(120, factorial(5))
         self.assertEqual(3628800, factorial(10))
         self.assertEqual(1307674368000, factorial(15))
+
+    def test_toggle_string(self):
+        self.assertEqual('ABCDe', toggle_string('abcdE'))
+        self.assertEqual('dEfGhIJ', toggle_string('DeFgHij'))
 
 
 if __name__ == '__main__':
