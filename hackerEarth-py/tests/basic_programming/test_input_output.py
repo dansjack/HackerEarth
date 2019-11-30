@@ -2,7 +2,7 @@ import unittest
 from io import StringIO
 from unittest.mock import patch
 
-from basic_programming.input_output import find_product, zoos
+from basic_programming.input_output import find_product, zoos, count_divisors
 
 
 class TestInputOutput(unittest.TestCase):
@@ -39,6 +39,12 @@ class TestInputOutput(unittest.TestCase):
         zoos('zzzoooooo')
         zoos('zzzooooooo')
         assert mock_stdout.getvalue() == 'Yes\nNo\n'
+
+    @patch('sys.stdout', new_callable=StringIO)
+    def test_count_divisors(self, mock_stdout):
+        count_divisors(1, 10, 1)
+        count_divisors(2, 10, 2)
+        assert mock_stdout.getvalue() == '10\n5\n'
 
 
 if __name__ == '__main__':

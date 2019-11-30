@@ -69,3 +69,11 @@ def cost_of_balloons(tests):
 
         tests -= 1
         print('{}'.format(minimum))
+
+
+def count_divisors(l, r, k):
+    total = 0
+    for i in range(int(l), int(r) + 1):
+        if i % int(k) == 0:
+            total += 1
+    print(total)
