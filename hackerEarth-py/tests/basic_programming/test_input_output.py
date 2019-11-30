@@ -2,7 +2,8 @@ import unittest
 from io import StringIO
 from unittest.mock import patch
 
-from basic_programming.input_output import find_product, zoos, count_divisors
+from basic_programming.input_output import find_product, zoos, count_divisors, \
+    factorial
 
 
 class TestInputOutput(unittest.TestCase):
@@ -45,6 +46,11 @@ class TestInputOutput(unittest.TestCase):
         count_divisors(1, 10, 1)
         count_divisors(2, 10, 2)
         assert mock_stdout.getvalue() == '10\n5\n'
+
+    def test_factorial(self):
+        self.assertEqual(120, factorial(5))
+        self.assertEqual(3628800, factorial(10))
+        self.assertEqual(1307674368000, factorial(15))
 
 
 if __name__ == '__main__':
