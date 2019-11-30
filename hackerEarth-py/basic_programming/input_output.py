@@ -49,3 +49,23 @@ def zoos(word):
         print('Yes')
     else:
         print('No')
+
+
+def cost_of_balloons(tests):
+    while tests > 0:
+        cost_green, cost_purple = input().split(' ')
+        participants = int(input())
+        minimum = 0
+        prob_counts = [0, 0]
+        while participants > 0:
+            prob_1, prob_2 = input().split(' ')
+            if prob_1 == '1':
+                prob_counts[0] += 1
+            if prob_2 == '1':
+                prob_counts[1] += 1
+            participants -= 1
+        minimum += min(prob_counts) * max(int(cost_green), int(cost_purple))
+        minimum += max(prob_counts) * min(int(cost_green), int(cost_purple))
+
+        tests -= 1
+        print('{}'.format(minimum))
