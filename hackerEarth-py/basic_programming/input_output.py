@@ -42,3 +42,10 @@ def find_product(n, int_list):
     for i in int_list:
         answer = (answer * int(i)) % 1000000007
     return answer
+
+
+def zoos(word):
+    if word.count('z') * 2 == word.count('o'):
+        print('Yes')
+    else:
+        print('No')

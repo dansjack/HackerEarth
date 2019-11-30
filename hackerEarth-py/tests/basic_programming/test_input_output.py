@@ -1,6 +1,8 @@
 import unittest
+from io import StringIO
+from unittest.mock import patch
 
-from basic_programming.input_output import find_product
+from basic_programming.input_output import find_product, zoos
 
 
 class TestInputOutput(unittest.TestCase):
@@ -32,6 +34,11 @@ class TestInputOutput(unittest.TestCase):
         with self.assertRaises(ValueError):
             find_product(list_size, n)
 
+    @patch('sys.stdout', new_callable=StringIO)
+    def test_zoos(self, mock_stdout):
+        zoos('zzzoooooo')
+        zoos('zzzooooooo')
+        assert mock_stdout.getvalue() == 'Yes\nNo\n'
 
 
 if __name__ == '__main__':
